@@ -1,0 +1,19 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "mubende-cf-spike",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2025-03-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  "r2_buckets": [
+    {
+      "binding": "IMAGES",
+      "bucket_name": "mubende-resort"
+    }
+  ]
+  // DATABASE_URL is set via `wrangler secret put DATABASE_URL` for prod
+  // and via .dev.vars for local dev (see .dev.vars.example)
+}
